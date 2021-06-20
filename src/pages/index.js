@@ -1,185 +1,128 @@
-import * as React from "react"
-import "./index.scss"
+import React from "react"
+import { Link } from "gatsby"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import Layout from "../components/Layout"
+import Devices from "../images/365templates-hero_devices.jpg"
+import Featured from "../images/featuredTheme-placeholde-870x870r.jpg"
+import Bulb from "../images/light-bulb.png"
+import HowItWorks from "../images/how-it-works.png"
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+const IndexPage = () => (
+  <Layout>
+    <div className="hero-wrapper container-fluid">
+      <div className="hero-content container text-center">
+        <div className="hero-content">
+          <h1>Beautiful Sites.<br />No Hassle.</h1>
+          <p className="hero-lead">Select your template. Deliver your content. We'll handle the rest!</p>
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+          <Link to="/" className="btn green-btn">Start Your Site</Link>
+          <p className="hero-small">Know what you're here for?</p>
+        </div>
+        <img
+          src={Devices}
+          className="img-responsive center-block"
+          alt="Computer, Laptop, Tablet, and Mobile Phone"
+        />
+        </div>
+    </div>
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+    <div className="container text-center how-it-works">
+      <h2 className="text-darkblue">How it <span className="text-green">works</span></h2>
+      <p className="text-blue-trans col-sm-8 col-sm-offset-2">Setting up a site our templated site solution is as easy as <span className="bold">1, 2, 3!</span> We like to call <span className="bold">Select, Send, Site.</span> Take a look at the quick guide below to see how its done.</p>
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+      <div className="hidden-xs col-sm-12" style={{marginBottom: 40, marginTop: 40}}>
+        <img src={HowItWorks} className="img-responsive center-block" alt="How it works infographic"/>
+      </div>
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
-const IndexPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl" style={{marginBottom: 40, marginTop: 40}}>
+        <ul>
+          <li class="row">
+            <h4 class="col-xs-1 text-green">1</h4>
+            <div class="col-xs-11 text-darkblue text-left">
+              <h4>Select your theme</h4>
+              <p class="text-blue-trans">Browse through our library of completely custom and unique designs you won’t find anywhere else! Select the design you think works best for your business. We’ve highlighted some of the strengths of each theme to help you with your decision.</p>
+            </div>
           </li>
-        ))}
+          <li class="row">
+            <h4 class="col-xs-1 text-green">2</h4>
+            <div class="col-xs-11 text-darkblue text-left">
+              <h4>Send your content</h4>
+              <p class="text-blue-trans">After selecting your theme you’ll be prompted with a form that’s been tailored to your design asking for the content you want displayed on your site. We have this broken down this way so you are aware of and can provide the appropriate amount of text and images needed for the theme you selected.</p>
+            </div>
+          </li>
+          <li class="row">
+            <h4 class="col-xs-1 text-green">3</h4>
+            <div class="col-xs-11 text-darkblue text-left">
+              <h4>We build your site</h4>
+              <p class="text-blue-trans">After we’ve received your content we’ll get right to work putting your site together! At this point all you have to do is sit tight until we notify you your site is live!</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <h3 className="text-darkblue">That's all it takes!</h3>
+      <p className="text-darkblue">Ready to get started?</p>
+      <Link to="/" className="btn green-btn">Start Your Site</Link>
+    </div>
+
+    <div className="container-fluid featured-wrapper">
+      <div className="container">
+        <div className="row content">
+          <div className="col-xs-12 col-sm-6">
+            <img
+              src={Featured}
+              className="img-responsive"
+              alt="Thumbnail of the featured theme"
+            />
+          </div>
+          <div className="col-xs-12 col-sm-6">
+            <h2 className="text-darkblue">Featured <span className="text-white">Theme</span></h2>
+            <h3 className="text-white">Business</h3>
+            <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul className="text-white">
+              <li>Photo Gallery</li>
+              <li>Contact Form</li>
+              <li>Portfolio</li>
+            </ul>
+            <Link to="/" className="btn blue-btn">See More Info</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="container benefits">
+      <div className="col-xs-12 col-sm-6">
+        <h2 className="text-darkblue">The <span className="text-green">Benefits</span></h2>
+        <p className="text-blue-trans">We could go on forever about the benefits of one of our beautiful site options but we know you have a business to run so we’ll just  name a few. Our sites are designed in-house so there’s not 1,000 other people already using the design you like, giving you a more unique presence on the web.</p>
+        <ul className="text-darkblue">
+          <li>Affordable</li>
+          <li>World-class Designs</li>
+          <li>Fast Load Time</li>
+          <li>Mobile Responsive</li>
+          <li>Easy maintenance</li>
+          <li>Personable Support</li>
+        </ul>
+      </div>
+      <div className="col-xs- 12 col-sm-6">
+        <img 
+          src={Bulb}
+          className="img-responsive col-xs-8 col-xs-offset-2 col-sm-offset-1"
+          alt="Light bulb graphic"
+        />
+      </div>
+    </div>
+
+    <div className="container we-handle-everything">
+      <h2 className="text-darkblue text-center">We Handle <span className="text-green">Everything</span> <span className="text-small hidden-xs">(almost)</span></h2>
+      <p className="col-sm-8 col-sm-offset-2 text-center text-blue-trans">Building a website can be a daunting task that not everyone has the time to deal with.That’s why we take care of all of it for you! We handle the tough stuff so you don’t have to. We’ll purchase your domain name, set up your server, and make sure your content is optimized for peak web performance so you can focus on running your business to its best.</p>
+      <ul className="text-darkblue col-xs-12 text-center">
+        <li>Server Setup and Configuration</li>
+        <li>Image and Content Optimization</li>
+        <li>Site Development and Deployment</li>
+        <li>Search Engine Optimization</li>
       </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+    </div>
+  </Layout>
+)
 
 export default IndexPage
