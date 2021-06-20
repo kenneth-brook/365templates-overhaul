@@ -26,56 +26,58 @@ const IndexPage = () => (
         </div>
     </div>
 
-    <div className="container text-center how-it-works">
+    <div className="indexMain">
       <h2 className="text-darkblue">How it <span className="text-green">works</span></h2>
-      <p className="text-blue-trans col-sm-8 col-sm-offset-2">Setting up a site our templated site solution is as easy as <span className="bold">1, 2, 3!</span> We like to call <span className="bold">Select, Send, Site.</span> Take a look at the quick guide below to see how its done.</p>
-
+      <div className="pCenter">
+        <p className="text-blue-trans">Setting up a site our templated site solution is as easy as <span className="bold">1, 2, 3!</span> We like to call <span className="bold">Select, Send, Site.</span> Take a look at the quick guide below to see how its done.</p>
+      </div>
       <div className="hidden-xs col-sm-12" style={{marginBottom: 40, marginTop: 40}}>
         <img src={HowItWorks} className="img-responsive center-block" alt="How it works infographic"/>
       </div>
 
       <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl" style={{marginBottom: 40, marginTop: 40}}>
-        <ul>
-          <li class="row">
-            <h4 class="col-xs-1 text-green">1</h4>
-            <div class="col-xs-11 text-darkblue text-left">
-              <h4>Select your theme</h4>
+        <ul className="ulPush">
+          <li class="liCenter">
+            <h4 class="text-green">1 <span className="text-darkblue"> Select your theme</span></h4>
+            <div class="col-xs-11 text-darkblue text-left">  
               <p class="text-blue-trans">Browse through our library of completely custom and unique designs you won’t find anywhere else! Select the design you think works best for your business. We’ve highlighted some of the strengths of each theme to help you with your decision.</p>
             </div>
           </li>
-          <li class="row">
-            <h4 class="col-xs-1 text-green">2</h4>
+          <li class="liCenter">
+            <h4 class="text-green">2 <span className="text-darkblue">Send your content</span></h4>
             <div class="col-xs-11 text-darkblue text-left">
-              <h4>Send your content</h4>
               <p class="text-blue-trans">After selecting your theme you’ll be prompted with a form that’s been tailored to your design asking for the content you want displayed on your site. We have this broken down this way so you are aware of and can provide the appropriate amount of text and images needed for the theme you selected.</p>
             </div>
           </li>
-          <li class="row">
-            <h4 class="col-xs-1 text-green">3</h4>
+          <li class="liCenter">
+            <h4 class="text-green">3 <span className="text-darkblue">We build your site</span></h4>
             <div class="col-xs-11 text-darkblue text-left">
-              <h4>We build your site</h4>
               <p class="text-blue-trans">After we’ve received your content we’ll get right to work putting your site together! At this point all you have to do is sit tight until we notify you your site is live!</p>
             </div>
           </li>
+          <li class="liCenter">
+            <h3 className="text-darkblue">That's all it takes!</h3>
+            <p className="text-darkblue">Ready to get started?</p>
+            <Link to="/" className="btn green-btn">Start Your Site</Link>
+          </li>
         </ul>
+        
       </div>
 
-      <h3 className="text-darkblue">That's all it takes!</h3>
-      <p className="text-darkblue">Ready to get started?</p>
-      <Link to="/" className="btn green-btn">Start Your Site</Link>
+      
     </div>
 
-    <div className="container-fluid featured-wrapper">
-      <div className="container">
-        <div className="row content">
-          <div className="col-xs-12 col-sm-6">
+    <div className="featuredBlock">
+      
+        
+          <div className="featuredImg">
             <img
               src={Featured}
               className="img-responsive"
               alt="Thumbnail of the featured theme"
             />
           </div>
-          <div className="col-xs-12 col-sm-6">
+          <div className="featuredText">
             <h2 className="text-darkblue">Featured <span className="text-white">Theme</span></h2>
             <h3 className="text-white">Business</h3>
             <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -86,8 +88,8 @@ const IndexPage = () => (
             </ul>
             <Link to="/" className="btn blue-btn">See More Info</Link>
           </div>
-        </div>
-      </div>
+        
+      
     </div>
 
     <div className="container benefits">

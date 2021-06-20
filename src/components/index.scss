@@ -342,12 +342,6 @@ How it Works Styles
 Featured Theme Styles
 ==========================================================
 ========================================================*/
-.featured-wrapper {
-	background-image: url("../images/365templates-green-background.jpg");
-	background-size: cover;
-	background-position: center;
-	margin-bottom: 40px;
-}
 
 .featured-wrapper .content {
 	transform: translateY(-40px);
@@ -584,4 +578,48 @@ Media Queries
 }
 
 @media (min-width: 1440px) {
+}
+/* index */
+
+.indexMain {
+	width: 100%;
+	text-align: center;
+	margin-top: 80px;
+
+	.pCenter {
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	.ulPush {
+		padding-bottom: 40px;
+
+		.liCenter {
+			width: 75%;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+	}
+}
+
+.featuredBlock {
+	background-image: url("../images/365templates-green-background.jpg");
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 40px;
+	padding: 20px 0;
+	display: flex;
+	justify-content: space-around;
+
+	.featuredImg {
+		width: 45%;
+	}
+
+	.featuredText {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		width: 30%;
+	}
 }
